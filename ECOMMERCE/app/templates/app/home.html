@@ -49,8 +49,9 @@
  <h2>GoEasy Deals of The Day</h2>
  <!-- Slider 1 -->
  <div class="owl-carousel" id="slider1">
-  <a href="{% url 'product-detail' %}" class="btn"><div class="item"><img src="{% static 'app/images/product/1.jpg' %}" alt="" height="200px"><span class="fw-bold">Product 1</span><br><span class="fs-5">Rs. 500</span></div></a>
-  
+  {% for Bottomwear in bottomwears  %}
+      <a href="{% url 'product-detail' %}" class="btn"><div class="item"><img src="{{  Bottomwear.product_image.url  }}" alt="Upps! image can't be displayed !" height="200px"><span class="fw-bold">{{Bottomwear.title}}</span><br><span class="fs-5">{{Bottomwear.discounted_price}}</span></div></a>
+  {% endfor %}
 </div>
 </div>
 <!-- End 1st Product Slider -->
